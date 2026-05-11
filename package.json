@@ -1,0 +1,24 @@
+{
+  "name": "api-movimentacao-animais",
+  "version": "1.0.0",
+  "description": "Projeto para a cápsula 3 do projeto CapsulasDev",
+  "homepage": "https://github.com/eukaualima/capsula-3#readme",
+  "bugs": {
+    "url": "https://github.com/eukaualima/capsula-3/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eukaualima/capsula-3.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "dotenv": "^17.4.2",
+    "mysql2": "^3.22.3"
+  }
+}
