@@ -1,13 +1,13 @@
 import mysql from 'mysql2/promise.js';
-import 'dotenv/config.js';
+import 'dotenv/config';
 
 const pool = mysql.createPool(
 {
-    host: process.env.DB_HOST,
-    user: process.env.DB_USER,
-    database: process.env.DB_NAME,
-    password: process.env.DB_PASSWORD,
-    port: process.env.DB_PORT
+    host: 'localhost',
+    user: 'root',
+    database: 'movimentacao_animais',
+    password: '123456',
+    port: 3306
 });
 
 export default pool;

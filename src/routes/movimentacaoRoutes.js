@@ -6,7 +6,7 @@ const router = Router();
 
 router.post('/', verificarToken, (req, res) => 
 {
-    return movimentacaoController.registrar(req, res);
+    return movimentacaoController.cadastrar(req, res);
 });
 
 router.get('/', verificarToken, (req, res) => 

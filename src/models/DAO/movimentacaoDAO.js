@@ -1,5 +1,5 @@
-import db from '../config/database.js';
-import Movimentacao from './Movimentacao.js';
+import db from '../../config/database.js';
+import Movimentacao from '../Movimentacao.js';
 
 class MovimentacaoDAO
 {

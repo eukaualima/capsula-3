@@ -1,5 +1,5 @@
-import animalDAO from "../models/DAO/animalDAO";
-import Animal from "../models/Animal";
+import animalDAO from "../models/DAO/animalDAO.js";
+import Animal from "../models/Animal.js";
 
 class AnimalController
 {

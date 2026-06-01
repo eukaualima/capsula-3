@@ -25,14 +25,14 @@ export default class Movimentacao
 
     setAnimalId(valor) 
     { 
-        if (!valor || isNaN(valor)) throw new Error("ID do animal inválido.");
+        // if (!valor || isNaN(valor)) throw new Error("ID do animal inválido.");
 
         this.#animalId = Number(valor); 
     }
 
     setEventoId(valor) 
     { 
-        if (!valor || isNaN(valor)) throw new Error("ID do evento inválido.");
+        // if (!valor || isNaN(valor)) throw new Error("ID do evento inválido.");
 
         this.#eventoId = Number(valor); 
     }
@@ -41,10 +41,10 @@ export default class Movimentacao
     { 
         const pos = Number(valor);
 
-        if (isNaN(pos) || pos <= 0 || pos > 999) 
-        {
-            throw new Error("A colocação deve ser um número válido entre 1 e 999.");
-        }
+        // if (isNaN(pos) || pos <= 0 || pos > 999) 
+        // {
+        //     throw new Error("A colocação deve ser um número válido entre 1 e 999.");
+        // }
         this.#colocacao = pos; 
     }
 
@@ -54,10 +54,10 @@ export default class Movimentacao
 
         const catNormalizada = valor ? valor.toUpperCase().trim() : '';
 
-        if (!categoriasValidas.includes(catNormalizada)) 
-        {
-            throw new Error(`Categoria inválida. Aceitas: ${categoriasValidas.join(', ')}`);
-        }
+        // if (!categoriasValidas.includes(catNormalizada)) 
+        // {
+        //     throw new Error(`Categoria inválida. Aceitas: ${categoriasValidas.join(', ')}`);
+        // }
 
         this.#categoria = catNormalizada; 
     }

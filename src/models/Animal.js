@@ -38,16 +38,16 @@ export default class Animal
     // Setters
     setNome (nome)
     {
-        if (!nome || nome.trim() === "") throw new Error('O nome do animal não pode ser nulo ou conter somente espaços.');
+        // if (!nome || nome.trim() === "") throw new Error('O nome do animal não pode ser nulo ou conter somente espaços.');
 
         this.#nome = nome;
     }
 
     setRegistro (registro)
     {
-        if (!registro || registro.length < 4 || registro.trim() === "") throw new Error('O registro do animal não pode ser nulo ou menor que 4 caracteres.');
+        // if (!registro || registro.length < 4 || registro.trim() === "") throw new Error('O registro do animal não pode ser nulo ou menor que 4 caracteres.');
 
-        this.#registro = registro.trim().toUpperCase();
+        this.#registro = registro;
     }
 
     setDataNasc (data)
@@ -55,9 +55,9 @@ export default class Animal
         const dataRecebida = new Date(data);
         const dataAtual = new Date();
 
-        if (isNaN(dataRecebida.getTime())) throw new Error('A data inserida é inválida.');
+        // if (isNaN(dataRecebida.getTime())) throw new Error('A data inserida é inválida.');
 
-        if (dataRecebida > dataAtual) throw new Error('A data não pode ser no futuro.');
+        // if (dataRecebida > dataAtual) throw new Error('A data não pode ser no futuro.');
 
         this.#dataNasc = data;
     }

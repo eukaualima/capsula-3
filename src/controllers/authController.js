@@ -1,8 +1,8 @@
-import usuarioDAO from "../models/DAO/usuarioDAO";
+import usuarioDAO from "../models/DAO/usuarioDAO.js";
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
 
-export default class AuthController
+class AuthController
 {
     async login (req, res)
     {
@@ -47,3 +47,5 @@ export default class AuthController
         }
     }
 }
+
+export default new AuthController;

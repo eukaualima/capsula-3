@@ -19,10 +19,10 @@ export default class Evento
 
     setNome(valor) 
     { 
-        if (!valor || valor.trim() === "") 
-        {
-            throw new Error("O nome do evento não pode ser vazio.");
-        }
+        // if (!valor || valor.trim() === "") 
+        // {
+        //     throw new Error("O nome do evento não pode ser vazio.");
+        // }
 
         this.#nome = valor.trim(); 
     }

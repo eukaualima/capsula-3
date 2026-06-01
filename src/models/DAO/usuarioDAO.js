@@ -1,5 +1,5 @@
-import db from '../config/database.js';
-import Usuario from './Usuario.js';
+import db from '../../config/database.js';
+import Usuario from '../Usuario.js';
 
 class UsuarioDAO
 {

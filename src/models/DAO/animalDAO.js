@@ -1,5 +1,5 @@
-import db from '../config/database.js';
-import Animal from './Animal.js';
+import db from '../../config/database.js';
+import Animal from '../Animal.js';
 
 class AnimalDAO
 {

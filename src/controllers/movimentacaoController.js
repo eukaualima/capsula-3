@@ -1,5 +1,5 @@
-import movimentacaoDAO from "../models/DAO/movimentacaoDAO";
-import Movimentacao from "../models/Movimentacao";
+import movimentacaoDAO from "../models/DAO/movimentacaoDAO.js";
+import Movimentacao from "../models/Movimentacao.js";
 
 class MovimentacaoController
 {

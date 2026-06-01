@@ -9,7 +9,4 @@ const router = Router();
 // Rota para CRIAR a conta (Registro)
 router.post('/cadastro', (req, res) => usuarioController.cadastrar(req, res));
 
-// Rota para ENTRAR na conta (Login)
-router.post('/login', verificarToken, (req, res) => authController.login(req, res));
-
 export default router;
