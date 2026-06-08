@@ -13,6 +13,11 @@ class MovimentacaoController
     {
         try
         {
+            if (!req.body || Object.keys(req.body).length === 0)
+            {
+                return res.status(400).json({ erro: "Nenhuma informação foi enviada!" });
+            }
+
             const { animalId, eventoId, colocacao, categoria } = req.body;
 
             const novaMovimentacao = new Movimentacao(null, animalId, eventoId, colocacao, categoria);
@@ -41,7 +46,7 @@ class MovimentacaoController
         {
             const historico = await movimentacaoDAO.listarTodos();
 
-            return res.status(200).json({ mensagem: `Dados recuperados com sucesso!`, historico: historico.toJSON() });
+            return res.status(200).json({ mensagem: `Dados recuperados com sucesso!`, historico: historico });
 
         }
         catch (erro)
@@ -65,6 +70,11 @@ class MovimentacaoController
             // ID vem da URL recebendo o dado via parâmetro (ex.: localhost/api/movimentacoes/5, onde 5 é :id no router)
             const { id } = req.params;
     
+            if (!req.body || Object.keys(req.body).length === 0)
+            {
+                return res.status(400).json({ erro: "Nenhuma informação foi enviada!" });
+            }
+
             const { animalId, eventoId, colocacao, categoria } = req.body;
     
             const movimentacaoAtualizada = new Movimentacao(id, animalId, eventoId, colocacao, categoria);

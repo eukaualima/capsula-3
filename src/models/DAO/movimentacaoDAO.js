@@ -11,20 +11,20 @@ class MovimentacaoDAO
         `;
         
         const valores = [
-            movimentacaoObj.animalId, 
-            movimentacaoObj.eventoId, 
-            movimentacaoObj.colocacao, 
-            movimentacaoObj.categoria
+            movimentacaoObj.getAnimalId(), 
+            movimentacaoObj.getEventoId(), 
+            movimentacaoObj.getColocacao(), 
+            movimentacaoObj.getCategoria()
         ];
         
         const [resultado] = await db.query(sql, valores);
         
         return new Movimentacao(
             resultado.insertId, 
-            movimentacaoObj.animalId, 
-            movimentacaoObj.eventoId, 
-            movimentacaoObj.colocacao, 
-            movimentacaoObj.categoria
+            movimentacaoObj.getAnimalId(), 
+            movimentacaoObj.getEventoId(), 
+            movimentacaoObj.getColocacao(), 
+            movimentacaoObj.getCategoria()
         );
     }
 
@@ -55,10 +55,10 @@ class MovimentacaoDAO
         `;
         
         const valores = [
-            movimentacaoObj.animalId, 
-            movimentacaoObj.eventoId, 
-            movimentacaoObj.colocacao, 
-            movimentacaoObj.categoria,
+            movimentacaoObj.getAnimalId(), 
+            movimentacaoObj.getEventoId(), 
+            movimentacaoObj.getColocacao(), 
+            movimentacaoObj.getCategoria(),
             id
         ];
         

@@ -13,6 +13,11 @@ class AnimalController
     {
         try
         {
+            if (!req.body || Object.keys(req.body).length === 0)
+            {
+                return res.status(400).json({ erro: "Nenhuma informação foi enviada!" });
+            }
+
             const { nome, registro, dataNasc } = req.body;
 
             if (!nome || !registro || !dataNasc)
@@ -57,4 +62,4 @@ class AnimalController
     }
 }
 
-export default new Animal;
+export default new AnimalController();

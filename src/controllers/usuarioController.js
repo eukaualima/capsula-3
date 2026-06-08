@@ -8,6 +8,11 @@ class UsuarioController
     {
         try
         {
+            if (!req.body || Object.keys(req.body).length === 0)
+            {
+                return res.status(400).json({ erro: "Nenhuma informação foi enviada!" });
+            }
+
             const { nome, email, senha, perfil } = req.body;
 
             if (!nome || !email || !senha)

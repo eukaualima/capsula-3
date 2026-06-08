@@ -9,10 +9,10 @@ export default class Usuario
     constructor(id, nome, email, senha, perfil = 'usuario')
     {
         this.#id = id;
-        this.nome = nome;
-        this.email = email;
-        this.senha = senha;
-        this.perfil = perfil; 
+        this.setNome(nome);
+        this.setEmail(email);
+        this.setSenha(senha);
+        this.setPerfil(perfil); 
     }
 
     getId() { return this.#id; }
@@ -25,40 +25,39 @@ export default class Usuario
 
     setNome(valor) 
     { 
-        // if (!valor || valor.trim().length < 3) 
-        // {
-        //     throw new Error("O nome deve conter pelo menos 3 caracteres.");
-        // }
+        if (!valor || valor.trim().length < 3) 
+        {
+            throw new Error("O nome deve conter pelo menos 3 caracteres.");
+        }
 
         this.#nome = valor.trim().replace(/\b\w/g, c => c.toUpperCase()); 
     }
 
     setEmail(valor) 
     { 
-        // regex básica para validar se tem "cara" de e-mail (texto@texto.com)
         const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-        // if (!regexEmail.test(valor)) 
-        // {
-        //     throw new Error("Formato de e-mail inválido.");
-        // }
+        if (!regexEmail.test(valor)) 
+        {
+            throw new Error("Formato de e-mail inválido.");
+        }
 
         this.#email = valor.toLowerCase().trim(); 
     }
 
     setSenha(valor) 
     { 
-        // if (!valor || valor.length < 6) 
-        // {
-        //     throw new Error("A senha deve ter no mínimo 6 caracteres para sua segurança.");
-        // }
+        if (!valor || valor.length < 6) 
+        {
+            throw new Error("A senha deve ter no mínimo 6 caracteres para sua segurança.");
+        }
 
         this.#senha = valor; 
     }
 
     setPerfil(valor) 
     { 
-        // if (valor !== 'admin' && valor !== 'usuario') throw new Error("Perfil inválido.");
+        if (valor !== 'admin' && valor !== 'usuario') throw new Error("Perfil inválido.");
 
         this.#perfil = valor; 
     }

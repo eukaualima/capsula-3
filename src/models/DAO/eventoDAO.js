@@ -10,9 +10,9 @@ class EventoDAO
             VALUES (?);
         `;
         
-        const [resultado] = await db.query(sql, [eventoObj.nome]);
+        const [resultado] = await db.query(sql, [eventoObj.getNome()]);
         
-        return new Evento(resultado.insertId, eventoObj.nome);
+        return new Evento(resultado.insertId, eventoObj.getNome());
     }
 
     async listarTodos()

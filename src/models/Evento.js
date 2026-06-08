@@ -6,7 +6,7 @@ export default class Evento
     constructor(id, nome)
     {
         this.#id = id;
-        this.nome = nome; 
+        this.setNome(nome); 
     }
 
     getId() { return this.#id; }
@@ -19,10 +19,10 @@ export default class Evento
 
     setNome(valor) 
     { 
-        // if (!valor || valor.trim() === "") 
-        // {
-        //     throw new Error("O nome do evento não pode ser vazio.");
-        // }
+        if (!valor || valor.trim() === "") 
+        {
+            throw new Error("O nome do evento não pode ser vazio.");
+        }
 
         this.#nome = valor.trim(); 
     }

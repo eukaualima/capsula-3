@@ -8,6 +8,11 @@ class AuthController
     {
         try
         {
+            if (!req.body || Object.keys(req.body).length === 0)
+            {
+                return res.status(400).json({ erro: "Nenhuma informação foi enviada!" });
+            }
+
             const { email, senha } = req.body;
 
             if (!email || !senha)
@@ -22,7 +27,7 @@ class AuthController
                 return res.status(401).json({ erro: "E-mail ou senha inválido." });
             }
 
-            const senhaValida = await bcrypt.compare(senha, usuario.senha);
+            const senhaValida = await bcrypt.compare(senha, usuario.getSenha());
 
             if (!senhaValida)
             {
@@ -32,9 +37,9 @@ class AuthController
             const secret = process.env.JWT_SECRET || 'a_chave_super_secreta';
 
             const payload = {
-                id: usuario.id,
-                perfil: usuario.perfil,
-                email: usuario.email
+                id: usuario.getId(),
+                perfil: usuario.getPerfil(),
+                email: usuario.getEmail()
             }
 
             const token = jwt.sign(payload, secret, { expiresIn: '8h' });

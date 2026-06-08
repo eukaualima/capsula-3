@@ -10,11 +10,11 @@ class AnimalDAO
             VALUES (?, ?, ?);
         `;
         
-        const valores = [animalObj.nome, animalObj.registro, animalObj.dataNasc];
+        const valores = [animalObj.getNome(), animalObj.getRegistro(), animalObj.getDataNasc()];
         
         const [resultado] = await db.query(sql, valores);
         
-        return new Animal(resultado.insertId, animalObj.nome, animalObj.registro, animalObj.dataNasc);
+        return new Animal(resultado.insertId, animalObj.getNome(), animalObj.getRegistro(), animalObj.getDataNasc());
     }
 
     async listarTodos()

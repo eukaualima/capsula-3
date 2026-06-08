@@ -20,10 +20,10 @@ class UsuarioDAO
             INSERT INTO usuarios (nome, email, senha, perfil) 
             VALUES (?, ?, ?, ?);
         `;
-        const valores = [usuarioObj.nome, usuarioObj.email, usuarioObj.senha, usuarioObj.perfil];
+        const valores = [usuarioObj.getNome(), usuarioObj.getEmail(), usuarioObj.getSenha(), usuarioObj.getPerfil()];
         const [resultado] = await db.query(sql, valores);
         
-        return new Usuario(resultado.insertId, usuarioObj.nome, usuarioObj.email, usuarioObj.senha, usuarioObj.perfil);
+        return new Usuario(resultado.insertId, usuarioObj.getNome(), usuarioObj.getEmail(), usuarioObj.getSenha(), usuarioObj.getPerfil());
     }
 }
 
